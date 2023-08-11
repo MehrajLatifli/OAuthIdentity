@@ -12,6 +12,3 @@ update-database -context IdentityManagementInfrastructure.Persistence.DbContext.
 select *from "AspNetUsers"
 
 select *from "AspNetRoles"
-
-
-POST -> https://localhost:5001/connect/token
