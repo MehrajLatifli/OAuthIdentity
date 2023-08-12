@@ -80,6 +80,7 @@ builder.Services.AddMvc(options =>
 });
 
 
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -103,7 +104,12 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
+builder.Services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+{
+    builder.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+}));
 
 //builder.Services.AddAuthorization(options =>
 //{

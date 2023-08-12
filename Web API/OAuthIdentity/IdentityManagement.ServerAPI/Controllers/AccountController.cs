@@ -1,6 +1,9 @@
 ﻿using IdentityManagement.ServerAPI.Models;
 using IdentityManagement.ServerAPI.Models.IdentityManagement.ServerAPI.Models;
 using IdentityManagementInfrastructure.Persistence;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -19,6 +22,7 @@ namespace IdentityManagement.ServerAPI.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IConfiguration _configuration;
         private readonly RoleManager<IdentityRole> _roleManager;
+
         public AccountController(UserManager<AppUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
@@ -121,6 +125,9 @@ namespace IdentityManagement.ServerAPI.Controllers
             }
 
         }
+
+
+
 
         private static string GenerateRefreshToken()
         {

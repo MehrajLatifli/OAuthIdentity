@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Responsive Blog Template</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+    
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.5;
+                  overflow-x: hidden;
+            }
+    
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+            }
+    
+        nav {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+    }
+    
+    ul.nav-menu {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+            nav ul {
+                list-style-type: none;
+                display: grid;
+           grid-template-columns: 2fr 1fr;
+                gap: 20px;
+            }
+    
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+    
+            main {
+                padding: 20px;
+            }
+    
+            .featured-post {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .post-image img {
+                width: 100%;
+                height: auto;
+            }
+    
+            .blog-posts {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+    
+            .post {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+    
+            .post-image img {
+                width: 100%;
+                height: auto;
+            }
+    
+            footer {
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+            }
+    
+            .file-upload-form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 20px;
+            }
+    
+            .file-upload-form h1 {
+                margin-bottom: 20px;
+            }
+    
+            .file-upload-form input[type="file"] {
+                display: none;
+            }
+    
+            .file-upload-form label {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: #fff;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+    
+            .file-upload-form button[type="submit"] {
+                padding: 10px 20px;
+                background-color: #008CBA;
+                color: #fff;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+            }
+    
+            .file-input-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+    
+            .file-input-container label {
+                margin-right: 10px;
+            }
+    
+            
+            #modalinside{
+                  overflow-y: auto;
+                  background-color: red;
+                  max-height: 200px;
+                 width: 100%;
+            }
+    
+    
+    
+    
+          h3 {
+      word-wrap: break-word; /* Allows the text to wrap to the next line */
+      overflow: hidden; /* Hides any overflowing text */
+      white-space: wrap; /* Prevents the text from breaking into multiple lines */
+       text-overflow: ellipsis;
+    }
+        </style>
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Identity</h1>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured-post">
+
+            <div class="post-content">
+
+
+                <br>
+                <br>
+
+
+                <p id="statuslabel"></p>
+            </div>
+        </section>
+
+        <section id="blog-posts" class="blog-posts">
+
+
+
+        </section>
+
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="./registration.js"></script>
+
+    <script>
+
+        var interval = setInterval(function () {
+            var itemValue = localStorage.getItem('key');
+            if (itemValue === null) {
+
+                window.location.href = "http://localhost:5001/";
+
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
