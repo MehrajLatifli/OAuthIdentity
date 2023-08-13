@@ -9,4 +9,5 @@ update-database -context IdentityManagementInfrastructure.Persistence.DbContext.
 
 
 select *from "AspNetUsers"
+
 select *from "AspNetRoles"
